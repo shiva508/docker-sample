@@ -17,7 +17,7 @@ public class DemoDockerApplicationTests {
 	{
 	String expectedName = "Nattu";
 	assertEquals(expectedName, "Nattu");
-	System.out.println("Test Successful");	
+	System.out.println("Test Successful Smaple text");	
 	}
 
 }
