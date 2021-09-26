@@ -4,22 +4,33 @@
 // 		echo "INT Test"
 // }
 pipeline{
-	agent any
-	stages{
-			stage('Build'){
-					steps{
-						echo "Build"
-					}
+		agent any
+		stages{
+				stage('Build'){
+						steps{
+							echo "Build"
+						}
+				}
+				stage('Test'){
+						steps{
+							echo "Test"
+						}
+				}
+				stage('IntTest'){
+						steps{
+							echo "INT Test"
+						}
+				}
 			}
-			stage('Test'){
-					steps{
-						echo "Test"
-					}
+		post{
+			always{
+					echo 'I WILL ALWAYS KEEP EYE ON YOU'
 			}
-			stage('IntTest'){
-					steps{
-						echo "INT Test"
-					}
+			success{
+					echo 'I WILL ALWAYS RUN ON BUILD SUCCESS'
+			}
+			failue{
+					echo echo 'I WILL ALWAYS RUN ON BUILD FAILURE'
 			}
 		}
 }
