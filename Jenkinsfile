@@ -31,7 +31,7 @@ pipeline{
 			success{
 					echo 'I WILL ALWAYS RUN ON BUILD SUCCESS'
 			}
-			failue{
+			failure{
 					echo 'I WILL ALWAYS RUN ON BUILD FAILURE'
 			}
 		}
