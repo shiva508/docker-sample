@@ -5,7 +5,7 @@
 // }
 pipeline{
 		//agent any
-		agent {docker { image 'maven:3.6.3'}}
+		agent { docker { image 'maven:3.6.3' } }
 		stages{
 				stage('Build'){
 						steps{
@@ -32,7 +32,7 @@ pipeline{
 					echo 'I WILL ALWAYS RUN ON BUILD SUCCESS'
 			}
 			failue{
-					echo echo 'I WILL ALWAYS RUN ON BUILD FAILURE'
+					echo 'I WILL ALWAYS RUN ON BUILD FAILURE'
 			}
 		}
 }
