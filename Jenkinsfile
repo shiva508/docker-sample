@@ -41,6 +41,11 @@ pipeline{
 							echo "INT Test"
 						}
 				}
+				stage('Package'){
+						steps{
+							sh "mvn package -DskipTests"
+						}
+				}
 				stage('Build docker image'){
 						steps{
 							//"docker build -t dasari508201/docker-sample:tagname:$env.BUILD_ID"
