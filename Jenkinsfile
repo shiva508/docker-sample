@@ -41,6 +41,24 @@ pipeline{
 							echo "INT Test"
 						}
 				}
+				stage('Build docker image'){
+						steps{
+							//"docker build -t dasari508201/docker-sample:tagname:$env.BUILD_ID"
+							script{
+								dockerImage=docker.build("dasari508201/docker-sample:tagname:${env.BUILD_TAG}")
+							}
+						}
+				}
+				stage('Push docker image'){
+						steps{
+							script{
+								docker.withRegistry('','dockerhub'){
+										dockerImage.push()
+										dockerImage.push('latest')
+								}
+							}
+						}
+				}
 			}
 		post{
 			always{
