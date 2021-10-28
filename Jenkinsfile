@@ -50,7 +50,7 @@ pipeline{
 						steps{
 							//"docker build -t dasari508201/docker-sample:tagname:$env.BUILD_ID"
 							script{
-								dockerImage=docker.build("dasari508201/docker-sample:tagname:${env.BUILD_TAG}")
+								dockerImage=docker.build("dasari508201/docker-sample:${env.BUILD_TAG}")
 							}
 						}
 				}
